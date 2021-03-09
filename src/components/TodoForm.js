@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react'
+import {AiOutlinePlus} from 'react-icons/ai'
 
 function TodoForm(props) {
     const [input, setInput] = useState(props.edit ? props.edit.value : '');
@@ -51,7 +52,9 @@ function TodoForm(props) {
                    onChange={handleChange}
                    ref={inputRef}
                    />
-                 <button className="todo-button">Add task</button>
+                 <button className="todo-button">
+                   <AiOutlinePlus className="add-icon" />
+                 </button>
                </>
            )}
         </form>
