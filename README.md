@@ -31,8 +31,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 # TODO
 
-1. Save todo in localStorage
-2. Animate todo items
+1. ~~Save todo in localStorage~~
+2. ~~Animate todo items~~
 3. Make a clock
 4. Fix update todo item functionality
 5. Add an observer of entity
