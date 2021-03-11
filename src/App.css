@@ -114,9 +114,15 @@ h1 {
         90deg,
         rgb(51 63 230) 0%,
         rgb(43 185 34) 100%);
-    padding: 16px;
+    padding: 5px;
     border-radius: 5px;
     width: 90%;
+}
+
+.todo-row .todo-text {
+    line-height: 40px;
+    width: 100%;
+    text-align: left;
 }
 
 .todo-row:nth-child(4n + 1) {
