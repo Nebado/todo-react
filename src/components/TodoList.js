@@ -1,6 +1,7 @@
-import React, {useState, useEffect} from 'react'
-import TodoForm from './TodoForm'
-import Todo from './Todo'
+import React, {useState, useEffect} from 'react';
+import TodoForm from './TodoForm';
+import Todo from './Todo';
+import TodoObserver from './TodoObserver';
 
 function TodoList() {
     const [todos, setTodos] = useState([]);
@@ -62,7 +63,7 @@ function TodoList() {
     };
 
     return (
-        <div>
+        <div className="todo-wrapper">
           <h1>What's the Plan for Today?</h1>
           <TodoForm onSubmit={addTodo} />
           <Todo
@@ -71,6 +72,7 @@ function TodoList() {
             removeTodo={removeTodo}
             updateTodo={updateTodo}
           />
+          <TodoObserver />
         </div>
     );
 }
