@@ -14,4 +14,4 @@ In the project directory, you can run:
 
 ## Deployment
 
-[TODO](https://nebado.github.io/todo-react/)
+[TODO](https://nebado.github.io/todo-react/) on gh-pages
