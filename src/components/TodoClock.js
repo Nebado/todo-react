@@ -1,5 +1,4 @@
 import React from 'react';
-import FlipMove from 'react-flip-move';
 
 class TodoClock extends React.Component {
     constructor(props) {
