@@ -1,4 +1,4 @@
-# TODO App on React
+# [TODO](https://nebado.github.io/todo-react/) App on React
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -14,4 +14,4 @@ In the project directory, you can run:
 
 ## Deployment
 
-[TODO](https://nebado.github.io/todo-react/) on gh-pages
+The application deployed with gh-pages
