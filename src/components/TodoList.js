@@ -5,6 +5,7 @@ import TodoObserver from './TodoObserver';
 
 function TodoList() {
     const [todos, setTodos] = useState([]);
+    const [filter, setFilter] = useState("all");
 
     // Run once when the app start
     useEffect(() => {
@@ -65,7 +66,7 @@ function TodoList() {
     return (
         <div className="todo-wrapper">
           <h1>What's the Plan for Today?</h1>
-          <TodoForm onSubmit={addTodo} />
+          <TodoForm onSubmit={addTodo} setFilter={setFilter} />
           <Todo
             todos={todos}
             completeTodo={completeTodo}

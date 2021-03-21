@@ -86,7 +86,8 @@ h1 {
     color: #e2e2e2;
 }
 
-.todo-button {
+.todo-button,
+.todo-filter {
     font-size: 20px;
     padding: 15px;
     height: 50px;
@@ -102,6 +103,14 @@ h1 {
     color: #fff;
     text-shadow: 0 0 5px #ffffff;
     text-transform: capitalize;
+}
+
+.todo-filter {
+    margin-left: 20px;
+    background: linear-gradient(
+        90deg,
+        rgb(33, 100, 27) 0%,
+        rgb(120, 100, 22) 100%);
 }
 
 .todo-input.edit {
