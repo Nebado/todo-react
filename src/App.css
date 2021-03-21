@@ -105,14 +105,14 @@ h1 {
 }
 
 .todo-input.edit {
-    border: 2px solid #149fff;
+    border: 2px solid #1ef282;
 }
 
 .todo-button.edit {
     background: linear-gradient(
         90deg,
-        rgba(20, 159, 255, 1) 0%,
-        rgba(17, 122, 255, 1) 100%
+        rgba(28, 70, 23, 1) 0%,
+        rgba(28, 122, 38, 1) 100%
     );
     padding: 16px 22px;
 }
