@@ -59,8 +59,19 @@ h1 {
 }
 
 .complete {
-    text-decoration: line-through;
     opacity: 0.4;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.todo-row.complete .todo-text {
+    text-decoration: line-through;    
 }
 
 .todo-form {
@@ -113,6 +124,25 @@ h1 {
         rgb(120, 100, 22) 100%);
 }
 
+.todo-modal {
+    padding: 10px;
+    position: absolute;
+    width: 450px;
+    height: 150px;;
+    top: 47%;
+    right: 50%;
+    transform: translate(50%);
+    color: #fff;
+    background: rgba(77,77,77,0.92);
+    z-index: 100;
+}
+
+.todo-modal button {
+    margin: 5px;
+    padding: 5px;
+    width: 47%;
+}
+
 .todo-input.edit {
     border: 2px solid #1ef282;
 }
@@ -155,6 +185,13 @@ h1 {
 .todo-row .todo-text {
     line-height: 40px;
     width: 100%;
+    text-align: left;
+}
+
+.todo-row .filter {
+    font-size: 15px;
+    color: #ccc;
+    width: 15%;
     text-align: left;
 }
 
