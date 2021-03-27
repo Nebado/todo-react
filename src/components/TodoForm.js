@@ -1,9 +1,10 @@
 import React, {useState, useEffect, useRef} from 'react';
+import TodoFilter from './TodoFilter'
 import {AiOutlinePlus} from 'react-icons/ai';
-import {TiFilter} from 'react-icons/ti';
 
 function TodoForm(props) {
-    const [input, setInput] = useState(props.edit ? props.edit.value : '');
+    let [input, setInput] = useState(props.edit ? props.edit.value : '');
+    let [filter] = useState('');
 
     const inputRef = useRef(null);
 
@@ -18,17 +19,31 @@ function TodoForm(props) {
     const handleSubmit = e => {
         e.preventDefault();
 
+        if (/^[a-z]+(.*)(\\#iu)$/i.test(input)) {
+            filter = '#IU';
+            input = input.replace(/\\#iu/i, '');
+        }
+        if (/^[a-z]+(.*)(\\#inu)$/i.test(input)) {
+            filter = '#INU';
+            input = input.replace(/\\#inu/i, '');
+        }
+        if (/^[a-z]+(.*)(\\#niu)$/i.test(input)) {
+            filter = '#NIU';
+            input = input.replace(/\\#niu/i, '');
+        }
+        if (/^[a-z]+(.*)(\\#nn)$/i.test(input)) {
+            filter = '#NN';
+            input = input.replace(/\\#nn/i, '');
+        }
+
         props.onSubmit({
             id: Math.floor(Math.random() * 10000),
-            text: input
+            text: input,
+            filter: filter
         });
 
         setInput('');
     };
-
-    const filterHandler = (e) => {
-        console.log(e);
-    }
 
     return (
         <form className="todo-form" onSubmit={handleSubmit}>
@@ -60,9 +75,7 @@ function TodoForm(props) {
                  <button className="todo-button">
                    <AiOutlinePlus className="add-icon" />
                  </button>
-                 <div className="todo-filter" onClick={filterHandler} >
-                   <TiFilter className="filter-icon" />
-                 </div>
+                   <TodoFilter />
                </>
            )}
         </form>

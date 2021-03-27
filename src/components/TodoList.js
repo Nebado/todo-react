@@ -66,6 +66,7 @@ function TodoList() {
     return (
         <div className="todo-wrapper">
           <h1>What's the Plan for Today?</h1>
+          <TodoObserver />
           <TodoForm onSubmit={addTodo} setFilter={setFilter} />
           <Todo
             todos={todos}
@@ -73,7 +74,6 @@ function TodoList() {
             removeTodo={removeTodo}
             updateTodo={updateTodo}
           />
-          <TodoObserver />
         </div>
     );
 }

@@ -30,6 +30,9 @@ function Todo({todos, completeTodo, removeTodo, updateTodo}) {
           <div className='todo-text' key={todo.id} onClick={() => completeTodo(todo.id)}>
             {todo.text}
           </div>
+          <div className='filter' key={todo.filter}>
+            {todo.filter}
+          </div>
 
           <div className="icons">
             <RiCloseCircleLine
