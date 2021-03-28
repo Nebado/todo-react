@@ -1,16 +1,10 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect} from 'react';
 import TodoFilter from './TodoFilter'
 import {AiOutlinePlus} from 'react-icons/ai';
 
 function TodoForm(props) {
     let [input, setInput] = useState(props.edit ? props.edit.value : '');
     let [filter] = useState('');
-
-    const inputRef = useRef(null);
-
-    useEffect(() => {
-        inputRef.current.focus();
-    });
 
     const handleChange = e => {
         setInput(e.target.value);
@@ -56,7 +50,6 @@ function TodoForm(props) {
                   name="text"
                   className="todo-input edit"
                   onChange={handleChange}
-                  ref={inputRef}
                   />
                 <button className="todo-button edit">Update</button>
               </>
@@ -70,7 +63,6 @@ function TodoForm(props) {
                    name="text"
                    className="todo-input"
                    onChange={handleChange}
-                   ref={inputRef}
                    />
                  <button className="todo-button">
                    <AiOutlinePlus className="add-icon" />
