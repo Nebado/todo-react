@@ -97,8 +97,13 @@ h1 {
     color: #e2e2e2;
 }
 
+.todo-fwrapper {
+    display: flex;
+    justify-content: center;
+}
+
 .todo-button,
-.todo-filter {
+.btn-filter {
     font-size: 20px;
     padding: 15px;
     height: 50px;
@@ -116,7 +121,7 @@ h1 {
     text-transform: capitalize;
 }
 
-.todo-filter {
+.btn-filter {
     margin-left: 20px;
     background: linear-gradient(
         90deg,

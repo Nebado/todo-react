@@ -4,7 +4,7 @@ import { RiCloseCircleLine } from 'react-icons/ri';
 import { TiEdit } from 'react-icons/ti';
 import FlipMove from 'react-flip-move';
 
-function Todo({todos, completeTodo, removeTodo, updateTodo}) {
+function Todo({todos, completeTodo, removeTodo, updateTodo, filteredTodos}) {
     const [edit, setEdit] = useState({
         id: null,
         value: ''
@@ -22,7 +22,7 @@ function Todo({todos, completeTodo, removeTodo, updateTodo}) {
         return <TodoForm edit={edit} onSubmit={submitUpdate} />;
     }
 
-    const items = todos.map((todo, index) => (
+    const items = filteredTodos.map((todo, index) => (
         <div
           className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
           key={index}

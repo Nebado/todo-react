@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import TodoForm from './TodoForm';
+import TodoFilter from './TodoFilter';
 import Todo from './Todo';
 import TodoObserver from './TodoObserver';
 
 function TodoList() {
     const [todos, setTodos] = useState([]);
-    const [filter, setFilter] = useState("all");
+    const [status, setStatus] = useState("all");
+    const [filteredTodos, setFilteredTodos] = useState([]);
 
     // Run once when the app start
     useEffect(() => {
@@ -15,6 +17,33 @@ function TodoList() {
     useEffect(() => {
         saveLocalTodos();
     }, [todos]);
+
+    useEffect(() => {
+        filterHandler();
+    }, [todos, status]);
+
+    const filterHandler = () => {
+        switch(status) {
+        case 'IU':
+            setFilteredTodos(todos.filter(todo => todo.filter === '#IU'));
+            break;
+        case 'INU':
+            setFilteredTodos(todos.filter(todo => todo.filter === '#INU'));
+            break;
+        case 'NIU':
+            setFilteredTodos(todos.filter(todo => todo.filter === '#NIU'));
+            break;
+        case 'NINU':
+            setFilteredTodos(todos.filter(todo => todo.filter === '#NINU'));
+            break;
+        case 'RESET':
+            setFilteredTodos(todos);
+            break;
+        default:
+            setFilteredTodos(todos);
+            break;
+        }
+    }
 
     const addTodo = todo => {
         if (!todo.text || /^\s*$/.test(todo.text)) {
@@ -67,8 +96,12 @@ function TodoList() {
         <div className="todo-wrapper">
           <h1>What's the Plan for Today?</h1>
           <TodoObserver />
-          <TodoForm onSubmit={addTodo} setFilter={setFilter} />
+          <div className="todo-fwrapper">
+            <TodoForm onSubmit={addTodo} />
+            <TodoFilter setStatus={setStatus} />
+          </div>
           <Todo
+            filteredTodos={filteredTodos}
             todos={todos}
             completeTodo={completeTodo}
             removeTodo={removeTodo}
