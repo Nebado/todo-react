@@ -25,9 +25,9 @@ function TodoForm(props) {
             filter = '#NIU';
             input = input.replace(/\\#niu/i, '');
         }
-        if (/^[a-z]+(.*)(\\#nn)$/i.test(input)) {
-            filter = '#NN';
-            input = input.replace(/\\#nn/i, '');
+        if (/^[a-z]+(.*)(\\#ninu)$/i.test(input)) {
+            filter = '#NINU';
+            input = input.replace(/\\#ninu/i, '');
         }
 
         props.onSubmit({
@@ -67,7 +67,6 @@ function TodoForm(props) {
                  <button className="todo-button">
                    <AiOutlinePlus className="add-icon" />
                  </button>
-                   <TodoFilter />
                </>
            )}
         </form>
