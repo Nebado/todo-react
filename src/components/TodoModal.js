@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 function TodoModal(props) {
-    const [show, setShow] = useState(false);
     const showHideClassName = props.show ? "todo-modal show" : "todo-modal hide";
 
     const statusHandler = (e) => {

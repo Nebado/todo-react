@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react';
-import TodoFilter from './TodoFilter'
+import React, {useState} from 'react';
 import {AiOutlinePlus} from 'react-icons/ai';
 
 function TodoForm(props) {
@@ -58,7 +57,7 @@ function TodoForm(props) {
                <>
                  <input
                    type="text"
-                   placeholder="Add a task"
+                   placeholder="Add a task \#filter"
                    value={input}
                    name="text"
                    className="todo-input"

@@ -25,7 +25,7 @@ class TodoObserver extends React.Component {
     }
 
     step() {
-        if (this.state.positionX == -3) {
+        if (this.state.positionX === -3) {
             this.state.positionX = -515;
         }
 
