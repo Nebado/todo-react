@@ -6,7 +6,7 @@ import TodoObserver from './TodoObserver';
 
 function TodoList() {
     const [todos, setTodos] = useState([]);
-    const [status, setStatus] = useState("all");
+    const [status, setStatus] = useState('');
     const [filteredTodos, setFilteredTodos] = useState([]);
 
     // Run once when the app start
@@ -24,19 +24,19 @@ function TodoList() {
 
     const filterHandler = () => {
         switch(status) {
-        case 'IU':
+        case 'iu':
             setFilteredTodos(todos.filter(todo => todo.filter === '#IU'));
             break;
-        case 'INU':
+        case 'inu':
             setFilteredTodos(todos.filter(todo => todo.filter === '#INU'));
             break;
-        case 'NIU':
+        case 'niu':
             setFilteredTodos(todos.filter(todo => todo.filter === '#NIU'));
             break;
-        case 'NINU':
+        case 'ninu':
             setFilteredTodos(todos.filter(todo => todo.filter === '#NINU'));
             break;
-        case 'RESET':
+        case 'reset':
             setFilteredTodos(todos);
             break;
         default:
