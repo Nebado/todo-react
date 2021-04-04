@@ -139,7 +139,7 @@ h1 {
     transform: translate(50%);
     color: #fff;
     background: rgba(28, 28, 28,0.9);
-    z-index: 100;
+    z-index: 500;
 }
 
 .todo-modal button {
@@ -231,6 +231,31 @@ h1 {
     color: #ffffff;
     text-shadow: 0 0 5px #ffffff;
     font-family: monospace;
+}
+
+.todo-timer {
+    position: absolute;
+    bottom: -80px;
+    right: 50%;
+    transform: translate(50%);
+    color: green;
+    font-size: 40px;
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff;
+    font-family: monospace;
+    z-index: 200;
+}
+
+.todo-timer .todo-input {
+    width: 150px;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;  
+}
+
+input[type=number]::placeholder {
+    font-size: 16px;
 }
 
 .todo-observer {
