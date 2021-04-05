@@ -53,6 +53,8 @@ class TodoTimer extends React.Component {
     };
     
     countDown() {
+        const audioEl = document.getElementsByClassName("audio-element")[0];        
+        
         if (this.state.seconds === 0) {
             this.setState({
                 minutes: this.state.minutes-1,
@@ -70,7 +72,8 @@ class TodoTimer extends React.Component {
                 seconds: 0,
                 _state: false
             });
-            
+
+            audioEl.play();
             clearInterval(this.intervalID);
             return false;
         }
@@ -98,6 +101,9 @@ class TodoTimer extends React.Component {
     render() {
         return (
             <div className="todo-timer">
+              <audio className="audio-element">
+                <source src="https://assets.coderrocketfuel.com/pomodoro-times-up.mp3"></source>
+              </audio>
               <form onSubmit={this.handleSubmit}>
                 {this.state._state ? (
                     <>                    
