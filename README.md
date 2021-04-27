@@ -6,12 +6,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-`npm start`
-
-`npm test`
-
-`npm run build`
+```console
+$ npm start
+$ npm test
+$ npm run build
+```
 
 ## Deployment
 
-The application deployed with gh-pages
+The application deployed by gh-pages
