@@ -39,7 +39,7 @@ function TodoForm(props) {
     };
 
     return (
-        <form className="todo-form" onSubmit={handleSubmit}>
+        <form className="todo__form" onSubmit={handleSubmit}>
           {props.edit ? (
               <>
                 <input
@@ -47,10 +47,10 @@ function TodoForm(props) {
                   placeholder="Update your item"
                   value={input}
                   name="text"
-                  className="todo-input edit"
+                  className="input-todo edit"
                   onChange={handleChange}
                   />
-                <button className="todo-button edit">Update</button>
+                <button className="btn btn-todo btn-edit">Update</button>
               </>
           ) :
            (
@@ -60,10 +60,10 @@ function TodoForm(props) {
                    placeholder="Add a task \#filter"
                    value={input}
                    name="text"
-                   className="todo-input"
+                   className="input-todo"
                    onChange={handleChange}
                    />
-                 <button className="todo-button">
+                 <button className="btn btn-todo">
                    <AiOutlinePlus className="add-icon" />
                  </button>
                </>

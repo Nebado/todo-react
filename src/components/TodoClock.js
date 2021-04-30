@@ -23,7 +23,7 @@ class TodoClock extends React.Component {
     }
     render() {
         return (
-            <p className="todo-clock">
+            <p className="todo__clock">
                 {this.state.time}
             </p>
         );
