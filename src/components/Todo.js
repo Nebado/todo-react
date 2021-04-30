@@ -24,10 +24,10 @@ function Todo({todos, completeTodo, removeTodo, updateTodo, filteredTodos}) {
 
     const items = filteredTodos.map((todo, index) => (
         <div
-          className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
+          className={todo.isComplete ? 'todo__row complete' : 'todo__row'}
           key={index}
           >
-          <div className='todo-text' key={todo.id} onClick={() => completeTodo(todo.id)}>
+          <div className='todo__text' key={todo.id} onClick={() => completeTodo(todo.id)}>
             {todo.text}
           </div>
           <div className='filter' key={todo.filter}>

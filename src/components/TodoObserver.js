@@ -59,7 +59,7 @@ class TodoObserver extends React.Component {
             right: this.state.right
         }
         return (
-            <div className="todo-observer" style={style}></div>
+            <div className="todo__observer" style={style}></div>
         );
     }
 }

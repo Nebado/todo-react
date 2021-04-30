@@ -93,10 +93,10 @@ function TodoList() {
     };
 
     return (
-        <div className="todo-wrapper">
+        <div className="todo__container">
           <h1>What's the Plan for Today?</h1>
           <TodoObserver />
-          <div className="todo-fwrapper">
+          <div className="todo__wrapper">
             <TodoForm onSubmit={addTodo} />
             <TodoFilter setStatus={setStatus} />
           </div>

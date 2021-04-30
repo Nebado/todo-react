@@ -9,10 +9,10 @@ function TodoFilter({setStatus}) {
     const handleHide = () => setShow(false);
     
     return (
-        <div className="todo-filter">
+        <div className="todo__filter">
           <TodoModal onClose={handleHide} show={show} setStatus={setStatus} />
-          <button onClick={handleShow} className="btn-filter">
-            <TiFilter className="filter-icon" />
+          <button onClick={handleShow} className="btn btn-filter">
+            <TiFilter className="filter filter-icon" />
           </button>
         </div>
     )

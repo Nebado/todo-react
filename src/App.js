@@ -5,9 +5,11 @@ import TodoList from './components/TodoList';
 
 function App() {
     return (
-        <div className="todo-app">
-        <TodoClock />
-        <TodoList />
+        <div className="todo__overlay">
+          <div className="todo__app">
+            <TodoClock />
+            <TodoList />
+          </div>
         </div>
     );
 }

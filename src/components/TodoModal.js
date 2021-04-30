@@ -1,7 +1,7 @@
 import React from 'react';
 
 function TodoModal(props) {
-    const showHideClassName = props.show ? "todo-modal show" : "todo-modal hide";
+    const showHideClassName = props.show ? "modal-todo show" : "modal-todo hide";
 
     const statusHandler = (e) => {
         props.setStatus(e.target.dataset.filter);
