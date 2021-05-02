@@ -100,13 +100,15 @@ function TodoList() {
             <TodoForm onSubmit={addTodo} />
             <TodoFilter setStatus={setStatus} />
           </div>
-          <Todo
-            filteredTodos={filteredTodos}
-            todos={todos}
-            completeTodo={completeTodo}
-            removeTodo={removeTodo}
-            updateTodo={updateTodo}
-          />
+          <div className="todo__list">
+            <Todo
+              filteredTodos={filteredTodos}
+              todos={todos}
+              completeTodo={completeTodo}
+              removeTodo={removeTodo}
+              updateTodo={updateTodo}
+              />
+          </div>
         </div>
     );
 }
