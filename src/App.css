@@ -21,6 +21,7 @@ body {
     width: 100wh; 
     height: 100vh;
     text-align: center;
+    overflow: hidden;
 }
 
 h1 {
@@ -49,7 +50,6 @@ h1 {
 
 .todo__app {
     display: flex;
-    padding: 3rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -75,6 +75,25 @@ h1 {
     justify-content: center;
     align-items: center;
 }
+
+.todo__list {
+    height: 250px;
+    overflow-y: scroll;
+}
+
+.todo__list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.todo__list::-webkit-scrollbar-track {
+    background-color: dark;
+}
+
+.todo__list::-webkit-scrollbar-thumb {
+    background: rgba(3, 100, 30, 0.5);
+    border-radius: 15px;
+}
+
 
 .btn-todo,
 .btn-filter {
@@ -152,6 +171,7 @@ h1 {
     text-transform: uppercase;
     font-weight: 600;
     margin: 10px;
+    margin-right: 15px;
     position: relative;
     color: #fff;
     border-right: 3px solid var(--border-color);
@@ -169,6 +189,14 @@ h1 {
     background: linear-gradient(90deg,#2d3523,#0b2112);
     box-shadow: 0 0 2px #1ef242, 0 0 5px #1ef242;
     
+}
+
+.todo__row:first-child {
+    margin-top: 0;
+}
+
+.todo__row:last-child {
+    margin-bottom: 0;
 }
 
 .todo__row .todo-text {
