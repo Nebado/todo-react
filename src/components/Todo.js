@@ -28,11 +28,11 @@ function Todo({todos, completeTodo, removeTodo, updateTodo, filteredTodos}) {
           key={index}
           >
           <div className='todo__text' key={todo.id} onClick={() => completeTodo(todo.id)}>
-            {todo.text}
+            {todo.text}            
           </div>
-          <div className='filter' key={todo.filter}>
+          <span className='filter' key={todo.filter}>
             {todo.filter}
-          </div>
+          </span>
 
           <div className="icons">
             <RiCloseCircleLine
