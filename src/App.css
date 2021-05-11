@@ -124,8 +124,22 @@ h1 {
 /* Todo Form */
 .todo__text {
     width: 70%;
-    padding: 25px;
+    padding: 25px 25px 15px 25px;
     text-align: left;
+    overflow-x: scroll;
+}
+
+.todo__text::-webkit-scrollbar {
+    width: 1px;
+}
+
+.todo__text::-webkit-scrollbar-track {
+    background-color: dark;
+}
+
+.todo__text::-webkit-scrollbar-thumb {
+    background: rgba(3, 100, 30, 0.5);
+    border-radius: 1px;
 }
 
 .filter {
