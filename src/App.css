@@ -124,9 +124,16 @@ h1 {
 /* Todo Form */
 .todo__text {
     width: 70%;
-    padding: 25px 25px 15px 25px;
+    padding: 30px 20px 15px 25px;
     text-align: left;
     overflow-x: scroll;
+}
+
+.todo__date {
+    font-size: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 60px;
 }
 
 .todo__text::-webkit-scrollbar {
@@ -144,7 +151,7 @@ h1 {
 
 .filter {
     text-align: right;
-    line-height: 58px;
+    line-height: 68px;
 }
 
 .todo__row.complete .todo__text {
@@ -182,6 +189,7 @@ h1 {
 }
 
 .todo__row {
+    height: 70px;
     border-radius: 0%;
     font-size: 1rem;
     line-height: 0.5rem;

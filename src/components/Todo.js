@@ -28,7 +28,8 @@ function Todo({todos, completeTodo, removeTodo, updateTodo, filteredTodos}) {
           key={index}
           >
           <div className='todo__text' key={todo.id} onClick={() => completeTodo(todo.id)}>
-            {todo.text}            
+            {todo.text}
+            <span className='todo__date'>{todo.date}</span>
           </div>
           <span className='filter' key={todo.filter}>
             {todo.filter}
