@@ -11,7 +11,9 @@ class TodoTimer extends React.Component {
             breakShortMin: 5,
             breakLongMin: 25,
             breaks: 0,
-            process: 'work'
+            process: 'work',
+            textWork: 'Hard Work',
+            textBreak: 'Break',
         };
 
         this.timerStart = this.timerStart.bind(this);
@@ -21,7 +23,7 @@ class TodoTimer extends React.Component {
     componentDidMount() {
         this.intervalIdTimer = setInterval(
             () => this.tickTimer(),
-            1000
+            1
         );
     }
     
@@ -29,20 +31,28 @@ class TodoTimer extends React.Component {
         clearInterval(this.intervalIdTimer);
     }
     
-    takeBreak() {
+    takeShortBreak() {
         this.setState({
             minutes: 5,
             seconds: 0,
             start: false,
             process: 'break',
-            breaks: this.state.breaks++
+            breaks: this.state.breaks+1
+        });
+    }
+
+    takeLongBreak() {
+        this.setState({
+            minutes: 25,
+            seconds: 0,
+            start: false,
+            process: 'break',
+            breaks: 0
         });
     }
     
     timerStart() {
         this.setState({
-            minutes: 25,
-            seconds: 0,
             start: true,
         });
     }
@@ -52,6 +62,7 @@ class TodoTimer extends React.Component {
             minutes: 25,
             seconds: 0,
             start: false,
+            process: 'work'
         });
     }
     
@@ -65,12 +76,20 @@ class TodoTimer extends React.Component {
                 currentSec = this.state.initSec-1;
             }
 
-            if (currentMin < 0) {
-                if (this.state.process === 'break') {
-                    this.timerStop();
+            if (currentMin < 0 && this.state.process == 'work') {
+                console.log(this.state.breaks);
+                if (this.state.breaks === 4) {
+                    this.takeLongBreak();
+                    return;
                 }
-                this.takeBreak();
+
+                this.takeShortBreak();
                 return;
+            } else if (currentMin < 0 && this.state.process == 'break') {
+                this.timerStop();
+                return;
+            } else {
+
             }
             
             this.setState({
@@ -82,7 +101,18 @@ class TodoTimer extends React.Component {
     }
     render() {
         return (
-            <div>
+                <div>
+                {(this.state.process == 'work') ? (
+                        <>
+                        <h1>{this.state.minutes + " min " + this.state.textWork}</h1>
+                        </>
+
+                ) :
+                 (
+                         <>
+                         <h1>{this.state.minutes + " min " + this.state.textBreak}</h1>
+                         </>
+                 )}
               <div className="todo__timer">{(this.state.minutes < 10) ? "0"+this.state.minutes : this.state.minutes}:
                 {(this.state.seconds < 10) ? "0"+this.state.seconds : this.state.seconds}</div>
                 <button className="btn btn-todo" onClick={this.timerStart}>Start</button>
