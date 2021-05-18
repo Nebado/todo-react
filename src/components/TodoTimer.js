@@ -23,7 +23,7 @@ class TodoTimer extends React.Component {
     componentDidMount() {
         this.intervalIdTimer = setInterval(
             () => this.tickTimer(),
-            1
+            1000
         );
     }
     
@@ -102,17 +102,20 @@ class TodoTimer extends React.Component {
     render() {
         return (
                 <div>
-                {(this.state.process == 'work') ? (
-                        <>
-                        <h1>{this.state.minutes + " min " + this.state.textWork}</h1>
-                        </>
-
-                ) :
-                 (
-                         <>
-                         <h1>{this.state.minutes + " min " + this.state.textBreak}</h1>
-                         </>
-                 )}
+                {
+                    (this.state.start == true) ? (<>
+                {
+                 (this.state.process == 'work') ? (<>
+                    <h1>{this.state.textWork}</h1>
+                 </>):
+                 (<>
+                    <h1>{this.state.textBreak}</h1>
+                  </>)
+                }
+                </>):
+                (<>
+                </>)
+                })
               <div className="todo__timer">{(this.state.minutes < 10) ? "0"+this.state.minutes : this.state.minutes}:
                 {(this.state.seconds < 10) ? "0"+this.state.seconds : this.state.seconds}</div>
                 <button className="btn btn-todo" onClick={this.timerStart}>Start</button>
