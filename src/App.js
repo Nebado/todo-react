@@ -9,8 +9,8 @@ function App() {
         <div className="todo__overlay">
           <div className="todo__app">
             <TodoClock />
-            <TodoList />
             <TodoTimer />
+            <TodoList />
           </div>
         </div>
     );
