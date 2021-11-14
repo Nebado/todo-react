@@ -172,51 +172,66 @@ h1 {
 }
 
 .input-todo {
-    width: 100%;
-    clip-path: polygon(
-        0px 25px,
-        26px 0px,
-        calc(60% - 25px) 0px,
-        60% 15px,
-        100% 15px,
-        100% calc(100% - 10px),
-        calc(100% - 15px) calc(100% - 10px),
-        calc(80% - 10px) calc(100% - 10px),
-        calc(80% - 15px) calc(100% - 0px),
-        10px calc(100% - 0px),
-        0% calc(100% - 10px)
-    );
-    margin-bottom: 10px;
-    padding: 12px;
+  width: 100%;
+  -webkit-clip-path: polygon(
+    0px 25px,
+    26px 0px,
+    calc(60% - 25px) 0px,
+    60% 15px,
+    100% 15px,
+    100% calc(100% - 10px),
+    calc(100% - 15px) calc(100% - 10px),
+    calc(80% - 10px) calc(100% - 10px),
+    calc(80% - 15px) calc(100% - 0px),
+    10px calc(100% - 0px),
+    0% calc(100% - 10px)
+  );
+  clip-path: polygon(
+    0px 12px,
+    12px 0px,
+    calc(60% - 10px) 0px,
+    60% 8px,
+    100% 8px,
+    100% calc(100% - -100px),
+    calc(100% - 18px) calc(100% - 8px),
+    calc(80% - 10px) calc(100% - 8px),
+    calc(80% - 15px) calc(100% - 0px),
+    10px calc(100% - 0px),
+    0% calc(100% - 10px)
+  );
+  margin-bottom: 10px;
+  padding: 12px;
+  outline: none;
+  border: none;
 }
 
 .todo__row {
-    height: 70px;
-    border-radius: 0%;
-    font-size: 1rem;
-    line-height: 0.5rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin: 10px;
-    margin-right: 15px;
-    position: relative;
-    color: #fff;
-    border-right: 3px solid var(--border-color);
-    clip-path: polygon(
-        -15px 0%,
-        calc(100% + 15px) 0%,
-        calc(100% + 15px) 100%,
-        20px 100%,
-        -15px calc(100% - 35px)
-    );
-    cursor: pointer;
-    outline: none;
-    display: flex;
-    justify-content: space-between;
-    background: var(--background-color);
-    box-shadow: 0 0 2px #1ef242, 0 0 5px #1ef242;
-    
+  height: 70px;
+  border-radius: 0%;
+  font-size: 1rem;
+  line-height: 0.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px;
+  margin-right: 15px;
+  position: relative;
+  color: #fff;
+  border-right: 3px solid var(--border-color);
+  clip-path: polygon(
+    -15px 0%,
+    calc(100% + 15px) 0%,
+    calc(100% + 15px) 100%,
+    20px 100%,
+    -15px calc(100% - 35px)
+  );
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  background: var(--background-color);
+  box-shadow: 0 0 2px #1ef242, 0 0 5px #1ef242;
+  
 }
 
 .todo__row:first-child {
