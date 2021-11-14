@@ -289,11 +289,6 @@ h1 {
     color: #ffffff;
     text-shadow: 0 0 5px #ffffff;
     margin: 20px;
-
-    animation-name: glitched;
-    animation-duration: calc(var(--glitched-long-duration) * 0.87);
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
 }
 
 /* Todo Timer */
