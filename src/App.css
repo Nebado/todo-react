@@ -1,366 +1,321 @@
 @import url('https://fonts.googleapis.com/css2?family=Tomorrow&display=swap');
 
 :root {
-    --glitched-duration: 0.8s;
-    --glitched-long-duration: 3s;
-    --background-color: rgba(3, 100, 30, 0.2);
-    --border-color: #2d3523;
+  --glitched-duration: 0.8s;
+  --glitched-long-duration: 3s;
+  --background-color: rgba(3, 100, 30, 0.2);
+  --main-color: #17b733;
+  --border-color: #2d3523;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Tomorrow', Arial, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Tomorrow', Arial, sans-serif;
 }
 
 body {
-    background: url('https://i.pinimg.com/originals/a9/68/0e/a9680e517bd3c6b8de6b231e383fd05f.jpg');
-    background-position: center;
-    position: relative;
-    width: 100wh; 
-    height: 100vh;
-    text-align: center;
-    overflow: hidden;
+  background: url('https://i.pinimg.com/originals/a9/68/0e/a9680e517bd3c6b8de6b231e383fd05f.jpg');
+  background-position: center;
+  position: relative;
+  width: 100wh; 
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
 }
 
 h1 {
-    margin: 10px 0 50px 0;
-    color: #fff;
-    font-size: 24px;
+  margin: 10px 0 50px 0;
+  color: var(--main-color);
+  text-shadow: 0px 0px 30px var(--main-color);
+  font-size: 24px;
 }
 
 .complete {
-    opacity: 0.4;
+  opacity: 0.4;
 }
 
 .show {
-    display: block;
+  display: block;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .todo__overlay {
-    width: 100wh;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, .7);
+  width: 100wh;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .9);
 }
 
 .todo__app {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .todo__container {
-    font-family: 'Tomorrow', sans-serif;
-    text-transform: uppercase;
-    outline: transparent;
-    letter-spacing: 2px;
-    position: relative;
-    font-weight: 700;
-    border: 0;
-    padding: 3rem 2rem;
-    padding-top: 10px;
-    width: 500px;
-    line-height: 75px;
-    transition: background 0.2s;    
+  font-family: 'Tomorrow', sans-serif;
+  text-transform: uppercase;
+  outline: transparent;
+  letter-spacing: 2px;
+  position: relative;
+  font-weight: 700;
+  border: 0;
+  padding: 3rem 2rem;
+  padding-top: 10px;
+  width: 500px;
+  line-height: 75px;
+  transition: background 0.2s;
+  box-shadow: 0 0 2px var(--main-color);
+  background: rgb(18, 44, 22, 0.2);
+  border-radius: 35px;
 }
 
 .todo__wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .todo__list {
-    height: 250px;
-    overflow-y: scroll;
-    scrollbar-color: rgba(255, 255, 255, 0.1) rgba(3, 100, 30, 0.5);
-    scrollbar-width: thin;
+  height: 250px;
+  overflow-y: scroll;
+  scrollbar-color: rgba(255, 255, 255, 0.1) rgba(3, 100, 30, 0.5);
+  scrollbar-width: thin;
 }
 
 .todo__list::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
 }
 
 .todo__list::-webkit-scrollbar-track {
-    background-color: dark;
+  background-color: dark;
 }
 
 .todo__list::-webkit-scrollbar-thumb {
-    background: rgba(3, 100, 30, 0.5);
-    border-radius: 15px;
+  background: rgba(3, 100, 30, 0.5);
+  border-radius: 15px;
 }
 
-.btn-todo,
-.btn-filter {
-    display: block;
-    border: none;
-    border-radius: 0%;
-    letter-spacing: 2px;
-    font-size: 20px;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: 15px 20px;
-    margin-left: 10px;
-    position: relative;
-    color: #fff;
-    border-right: 3px solid rgba(3, 100, 30, 0.2);
-    clip-path: polygon(
-        -15px 0%,
-        calc(100% + 15px) 0%,
-        calc(100% + 15px) 100%,
-        20px 100%,
-        -15px calc(100% - 35px)
-    );
-    cursor: pointer;
-    background-color: var(--background-color);
-    outline: none;
-    display: inline-block;
+.btn-todo, .btn-filter {
+  display: flex;
+  align-self: baseline;
+  letter-spacing: 2px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-left: 10px;
+  cursor: pointer;
+  padding: 10px;
+  box-shadow: 0px 0px 3px var(--background-color);
+  background-color: rgba(0, 0, 0, .3);
+  color: var(--main-color);
+  border: none;
+  outline: none;
 }
 
-/* Todo Form */
 .todo__text {
-    width: 70%;
-    padding: 30px 20px 15px 25px;
-    text-align: left;
-    overflow-x: scroll;
+  width: 70%;
+  font-size: 14px;
+  padding: 30px 20px 15px 25px;
+  text-align: left;
+  overflow-x: scroll;
 }
 
 .todo__date {
-    font-size: 10px;
-    position: absolute;
-    bottom: 10px;
-    right: 60px;
+  font-size: 10px;
+  position: absolute;
+  bottom: 10px;
+  right: 60px;
 }
 
 .todo__text::-webkit-scrollbar {
-    width: 1px;
+  width: 1px;
+  height: 5px;
 }
 
 .todo__text::-webkit-scrollbar-track {
-    background-color: dark;
+  background-color: dark;
 }
 
 .todo__text::-webkit-scrollbar-thumb {
-    background: rgba(3, 100, 30, 0.5);
-    border-radius: 1px;
+  background: rgba(3, 100, 30, 0.5);
+  border-radius: 1px;
+  height: 1px;
 }
 
 .filter {
-    text-align: right;
-    line-height: 68px;
+  text-align: right;
+  line-height: 68px;
 }
 
 .todo__row.complete .todo__text {
-    text-decoration: line-through;    
+  text-decoration: line-through;    
 }
 
 .todo__form {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .todo__filter {
-    margin-top: 3px;
+  display: flex;
+  align-self: baseline;
 }
 
 .input-todo {
   width: 100%;
-  -webkit-clip-path: polygon(
-    0px 25px,
-    26px 0px,
-    calc(60% - 25px) 0px,
-    60% 15px,
-    100% 15px,
-    100% calc(100% - 10px),
-    calc(100% - 15px) calc(100% - 10px),
-    calc(80% - 10px) calc(100% - 10px),
-    calc(80% - 15px) calc(100% - 0px),
-    10px calc(100% - 0px),
-    0% calc(100% - 10px)
-  );
-  clip-path: polygon(
-    0px 12px,
-    12px 0px,
-    calc(60% - 10px) 0px,
-    60% 8px,
-    100% 8px,
-    100% calc(100% - -100px),
-    calc(100% - 18px) calc(100% - 8px),
-    calc(80% - 10px) calc(100% - 8px),
-    calc(80% - 15px) calc(100% - 0px),
-    10px calc(100% - 0px),
-    0% calc(100% - 10px)
-  );
-  margin-bottom: 10px;
-  padding: 12px;
+  padding: 12px 15px;
   outline: none;
   border: none;
+  background: rgb(0, 0, 0, .6);
+  color: var(--main-color);
+  box-shadow: 0 0 3px var(--background-color);
+}
+
+.input-todo::placeholder {
+  color: var(--main-color);
 }
 
 .todo__row {
-  height: 70px;
   border-radius: 0%;
-  font-size: 1rem;
-  line-height: 0.5rem;
+  line-height: 0.2rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 600;
   margin: 10px;
   margin-right: 15px;
   position: relative;
-  color: #fff;
-  border-right: 3px solid var(--border-color);
-  clip-path: polygon(
-    -15px 0%,
-    calc(100% + 15px) 0%,
-    calc(100% + 15px) 100%,
-    20px 100%,
-    -15px calc(100% - 35px)
-  );
+  color: var(--main-color);
   cursor: pointer;
   outline: none;
   display: flex;
   justify-content: space-between;
-  background: var(--background-color);
-  box-shadow: 0 0 2px #1ef242, 0 0 5px #1ef242;
-  
+  background: rgba(0, 0, 0, .6);
+  box-shadow: 0 0 3px var(--main-color);
 }
 
 .todo__row:first-child {
-    margin-top: 0;
+  margin-top: 1px;
 }
 
 .todo__row:last-child {
-    margin-bottom: 0;
+  margin-bottom: 2px;
 }
 
 .todo__row .todo-text {
-    line-height: 40px;
-    width: 100%;
-    text-align: left;
-}
-
-/* Todo Modal */
-.modal-todo h3 {
-    margin: 10px 0;
+  line-height: 40px;
+  width: 100%;
+  text-align: left;
 }
 
 .modal-todo {
-    padding: 10px;
-    margin: -2px 0;
-    position: fixed;
-    width: 450px;
-    right: 50%;
-    top: 30%;
-    transform: translate(50%);
-    color: #fff;
-    background: rgba(0, 30, 30, 1);
-    z-index: 100;
-    transition: all .3s ease;
+  padding: 10px;
+  position: fixed;
+  width: 450px;
+  right: 50%;
+  top: 30%;
+  transform: translate(50%);
+  color: var(--main-color);
+  background: rgba(0, 0, 0, .9);
+  box-shadow: 0 0 3px var(--main-color);
+  z-index: 100;
+  transition: all .3s ease;
 }
 
 .modal-todo button {
-    margin: 5px;
-    height: 50px;
-    vertical-align: middle;
-    padding: 1rem;
-    width: 47%;
-    color: white;
-    font-weight: bold;
-    border: none;
-    font-family: inherit;
-    background: rgba(0, 0, 0, 0.5);
+  color: var(--main-color);
+  margin: 5px;
+  height: 50px;
+  vertical-align: middle;
+  padding: 1rem;
+  width: 47%;
+  font-weight: bold;
+  border: none;
+  font-family: inherit;
+  background: rgba(18, 44, 22, 0.2);
+  box-shadow: 0 0 3px var(--main-color);
 }
 
-/* Icons */
-
 .icons {
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 .delete-icon {
-    margin-right: 5px;
-    color: #fff;
+  margin-right: 5px;
 }
 
-.edit-icon {
-    color: #fff;
-}
-
-/* Clock */
 .todo__clock {
-    font-size: 40px;
-    color: #ffffff;
-    text-shadow: 0 0 5px #ffffff;
-    margin: 20px;
+  font-size: 40px;
+  color: var(--main-color);
+  text-shadow: 0 0 30px var(--main-color);
+  margin: 20px;
 }
 
-/* Todo Timer */
 .todo__timer {
-    display: none;
+  display: none;
 }
 
 .todo__time {
-    font-size: 30px;
-    color: #ffffff;
-    text-shadow: 0 0 5px #ffffff;
-    margin: 20px;
+  font-size: 30px;
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffffff;
+  margin: 20px;
 }
 
 .timer__title {
-    margin: 0;
+  margin: 0;
 }
 
-/* Observer */
+
 .todo__observer {
-    position: absolute;
-    right: 70px;
-    top: 77px;
-    /* background-size: contain; */
-    background-repeat: no-repeat;
-    height: 50px;
-    width: 30px;
-    background-image: url(https://www.pngkey.com/png/full/138-1386387_fbi-walk-cycle-top-down-walk-cycle.png);
-    background-position: -515px -67px;
+  position: absolute;
+  right: 70px;
+  top: 77px;
+  /* background-size: contain; */
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 30px;
+  background-image: url(https://www.pngkey.com/png/full/138-1386387_fbi-walk-cycle-top-down-walk-cycle.png);
+  background-position: -515px -67px;
 }
 
 @keyframes glitched {
-    0% {
-        transform: skew(-20deg);
-        left: -4px;
-    }
-    10% {
-        transform: skew(-20deg);
-        left: -4px;
-    }
-    11% {
-        transform: skew(0deg);
-        left: 2px;
-    }
-    50% {
-        transform: skew(0deg);
-    }
-    51% {
-        transform: skew(10deg);
-    }
-    59% {
-        transform: skew(10deg);
-    }
-    60% {
-        transform: skew(0deg);
-    }
-    100% {
-        transform: skew(0deg);
-    }
+  0% {
+    transform: skew(-20deg);
+    left: -4px;
+  }
+  10% {
+    transform: skew(-20deg);
+    left: -4px;
+  }
+  11% {
+    transform: skew(0deg);
+    left: 2px;
+  }
+  50% {
+    transform: skew(0deg);
+  }
+  51% {
+    transform: skew(10deg);
+ }
+  59% {
+    transform: skew(10deg);
+  }
+  60% {
+    transform: skew(0deg);
+  }
+  100% {
+    transform: skew(0deg);
+  }
 }
