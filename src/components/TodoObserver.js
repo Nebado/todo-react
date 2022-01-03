@@ -7,8 +7,8 @@ class TodoObserver extends React.Component {
             positionX: -515,
             positionY: -67,
             left: 10,
-            right: 90,
-            speed: 350,
+            right: 30,
+            speed: 300,
             direction: 1,
             stepNum: 64
         }
@@ -26,17 +26,23 @@ class TodoObserver extends React.Component {
 
     step() {
         if (this.state.positionX === -3) {
-            this.state.positionX = -515;
+            this.setState({
+                positionX: -515
+            });
         }
 
         if (this.state.right === 450) {
-            this.state.direction = 0;
-            this.state.positionY = -196;
+            this.setState({
+                direction: 0,
+                positionY: -196
+            });
         }
 
-        if (this.state.right === 90) {
-            this.state.direction = 1;
-            this.state.positionY = -67;
+        if (this.state.right === 30) {
+            this.setState({
+                direction: 1,
+                positionY: -70
+            });
         }
 
         if (this.state.direction === 1) {

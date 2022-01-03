@@ -9,20 +9,19 @@ function TodoList() {
     const [status, setStatus] = useState('');
     const [filteredTodos, setFilteredTodos] = useState([]);
 
-    // Run once when the app start
     useEffect(() => {
         getLocalTodos();
     }, []);
 
     useEffect(() => {
-        saveLocalTodos();
+        saveLocalTodos(todos);
     }, [todos]);
 
     useEffect(() => {
-        filterHandler();
+        filterHandler(todos, status);
     }, [todos, status]);
 
-    const filterHandler = () => {
+    const filterHandler = (todos, status) => {
         switch(status) {
         case 'iu':
             setFilteredTodos(todos.filter(todo => todo.filter === '#IU'));
@@ -79,7 +78,7 @@ function TodoList() {
         setTodos(updatedTodos);
     };
 
-    const saveLocalTodos = () => {
+    const saveLocalTodos = (todos) => {
         localStorage.setItem("todos", JSON.stringify(todos));
     };
 
