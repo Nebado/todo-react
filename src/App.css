@@ -277,17 +277,15 @@ h1 {
   margin: 0;
 }
 
-
 .todo__observer {
   position: absolute;
   right: 70px;
-  top: 77px;
-  /* background-size: contain; */
+  top: 90px;
   background-repeat: no-repeat;
-  height: 50px;
+  height: 55px;
   width: 30px;
-  background-image: url(https://www.pngkey.com/png/full/138-1386387_fbi-walk-cycle-top-down-walk-cycle.png);
-  background-position: -515px -67px;
+  background-image: url(images/fbi-walk-cycle-top-down-walk-cycle.png);
+  background-position: -520px -65px;
 }
 
 @keyframes glitched {
