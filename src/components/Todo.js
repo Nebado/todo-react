@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import TodoForm from './TodoForm';
-import { RiCloseCircleLine } from 'react-icons/ri';
-import { TiEdit } from 'react-icons/ti';
+import { BsTrash, BsPencil } from 'react-icons/bs';
 import FlipMove from 'react-flip-move';
 
 function Todo({todos, completeTodo, removeTodo, updateTodo, filteredTodos}) {
@@ -35,12 +34,12 @@ function Todo({todos, completeTodo, removeTodo, updateTodo, filteredTodos}) {
             {todo.filter}
           </span>
 
-          <div className="icons">
-            <RiCloseCircleLine
+        <div className="icons">
+            <BsTrash
               onClick={() => removeTodo(todo.id)}
               className='delete-icon'
               />
-              <TiEdit
+              <BsPencil
                 onClick={() => setEdit({id: todo.id, value: todo.text })}
                 className='edit-icon'
                 />
