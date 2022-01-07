@@ -17,11 +17,6 @@ $ npm test
 $ npm run build
 ```
 
-## TBD
-
-- Add a server-side client.
-- Use a db for storing todos (MongoDB, etc).
-
 ## Deployment
 
 The application deployed by gh-pages
