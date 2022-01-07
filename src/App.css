@@ -16,7 +16,7 @@
 }
 
 body {
-  background: url('https://i.pinimg.com/originals/a9/68/0e/a9680e517bd3c6b8de6b231e383fd05f.jpg');
+  background: url(images/background.jpg);
   background-position: center;
   position: relative;
   width: 100wh; 
