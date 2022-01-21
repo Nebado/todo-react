@@ -43,7 +43,7 @@ h1 {
 .todo__overlay {
   width: 100wh;
   height: 100vh;
-  background-color: rgba(0, 0, 0, .9);
+  background-color: rgba(0, 0, 0, .5);
 }
 
 .todo__app {
@@ -67,7 +67,7 @@ h1 {
   line-height: 75px;
   transition: background 0.2s;
   box-shadow: 0 0 2px var(--main-color);
-  background: rgb(18, 44, 22, 0.2);
+  background: rgb(18, 44, 22, 0.5);
   border-radius: 35px;
 }
 
