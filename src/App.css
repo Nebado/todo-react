@@ -43,7 +43,7 @@ h1 {
 .todo__overlay {
   width: 100wh;
   height: 100vh;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, .8);
 }
 
 .todo__app {
@@ -127,6 +127,7 @@ h1 {
 }
 
 .todo__text {
+  display: ruby;
   width: 70%;
   font-size: 14px;
   padding: 30px 20px 15px 25px;
