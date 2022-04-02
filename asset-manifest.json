@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/todo-react/static/css/main.8b58f180.chunk.css",
+    "main.css": "/todo-react/static/css/main.cd721b5f.chunk.css",
     "main.js": "/todo-react/static/js/main.3afe2588.chunk.js",
     "main.js.map": "/todo-react/static/js/main.3afe2588.chunk.js.map",
     "runtime-main.js": "/todo-react/static/js/runtime-main.25e15684.js",
@@ -8,14 +8,14 @@
     "static/js/2.15d5ae34.chunk.js": "/todo-react/static/js/2.15d5ae34.chunk.js",
     "static/js/2.15d5ae34.chunk.js.map": "/todo-react/static/js/2.15d5ae34.chunk.js.map",
     "index.html": "/todo-react/index.html",
-    "static/css/main.8b58f180.chunk.css.map": "/todo-react/static/css/main.8b58f180.chunk.css.map",
+    "static/css/main.cd721b5f.chunk.css.map": "/todo-react/static/css/main.cd721b5f.chunk.css.map",
     "static/js/2.15d5ae34.chunk.js.LICENSE.txt": "/todo-react/static/js/2.15d5ae34.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/todo-react/static/media/fbi-walk-cycle-top-down-walk-cycle.9148e624.png"
+    "static/media/App.css": "/todo-react/static/media/walking-observer.9148e624.png"
   },
   "entrypoints": [
     "static/js/runtime-main.25e15684.js",
     "static/js/2.15d5ae34.chunk.js",
-    "static/css/main.8b58f180.chunk.css",
+    "static/css/main.cd721b5f.chunk.css",
     "static/js/main.3afe2588.chunk.js"
   ]
 }
