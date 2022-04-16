@@ -3,6 +3,7 @@ import TodoForm from './TodoForm';
 import TodoFilter from './TodoFilter';
 import Todo from './Todo';
 import TodoObserver from './TodoObserver';
+import TodoPomodoroTimer from './TodoPomodoroTimer';
 
 function TodoList() {
     const [todos, setTodos] = useState([]);
@@ -108,6 +109,7 @@ function TodoList() {
               updateTodo={updateTodo}
               />
           </div>
+          <TodoPomodoroTimer />
         </div>
     );
 }
