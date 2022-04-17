@@ -277,6 +277,32 @@ h1 {
   margin: 20px;
 }
 
+.todo__pomodoro--timer {
+  display: block;
+}
+
+.pomodoro__timer--time {
+  background-color: rgba(0, 0, 0, .3);
+  border: 1px solid darkslategray;
+  font-size: 30px;
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffffff;
+  margin: 20px;
+}
+
+.pomodoro__timer--title {
+  color: var(--main-color);
+  text-shadow: 5px 0px 10px var(--main-color);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.todo__pomodoro--timer .btn__group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .todo__observer {
   position: absolute;
   right: 70px;
