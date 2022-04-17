@@ -1,6 +1,6 @@
 # [TODO](https://nebado.github.io/todo-react/) App on React
 
-The implementation of todo application on react.
+The implementation of todo application on React.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Requirements
@@ -16,7 +16,11 @@ $ npm start
 $ npm test
 $ npm run build
 ```
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-## Deployment
+Please make sure to update tests as appropriate.
 
-The application deployed by gh-pages
+## References
+
+[React](https://reactjs.org/)

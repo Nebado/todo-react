@@ -7,10 +7,8 @@ function App() {
     return (
         <div className="todo__overlay">
           <div className="todo__app">
-            <div className="todo__app--left">
-              <TodoClock />
-              <TodoList />
-            </div>
+            <TodoClock />
+            <TodoList />
           </div>
         </div>
     );
