@@ -94,7 +94,7 @@ function TodoList() {
 
     return (
         <div className="todo__container">
-          <h1>Todo Obser</h1>
+          <h1>Toder</h1>
           <TodoObserver />
           <div className="todo__wrapper">
             <TodoForm onSubmit={addTodo} />
