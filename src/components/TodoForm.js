@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {AiOutlinePlus} from 'react-icons/ai';
+//import {AiOutlinePlus} from 'react-icons/ai';
+import {BiListPlus} from 'react-icons/bi';
 
 function TodoForm(props) {
     let [input, setInput] = useState(props.edit ? props.edit.value : '');
@@ -65,7 +66,7 @@ function TodoForm(props) {
                    onChange={handleChange}
                    />
                  <button className="btn btn-todo">
-                   <AiOutlinePlus className="add-icon" />
+                   <BiListPlus className="add-icon" />
                  </button>
                </>
            )}
