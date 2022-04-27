@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
-//import {AiOutlinePlus} from 'react-icons/ai';
 import {BiListPlus} from 'react-icons/bi';
 
 function TodoForm(props) {
-    let [input, setInput] = useState(props.edit ? props.edit.value : '');
+    let [input] = useState(props.edit ? props.edit.value : '');
     let [filter] = useState('');
 
     const handleChange = e => {
-        setInput(e.target.value);
+        input = e.target.innerHTML;
     };
 
     const handleSubmit = e => {
@@ -32,39 +31,40 @@ function TodoForm(props) {
 
         props.onSubmit({
             id: Math.floor(Math.random() * 10000),
-            text: input,
+            text: input.replace(/\&nbsp;/g, '').replace(/<\/?[^>]+(>|$)/g, ""),
             filter: filter,
             date: new Date().toLocaleDateString()
         });
 
-        setInput('');
+        // TODO: fix it, to clear content in the input
+        e.target.firstChild.innerHTML = '';
     };
 
     return (
         <form className="todo__form" onSubmit={handleSubmit}>
           {props.edit ? (
               <>
-                <input
-                  type="text"
-                  placeholder="Update your item"
-                  value={input}
-                  name="text"
+                <div
+                  contentEditable
                   className="input-todo edit"
-                  onChange={handleChange}
-                  />
+                  onInput={handleChange}
+                  suppressContentEditableWarning={true}
+                >
+                {input}
+                </div>
                 <button className="btn btn-todo btn-edit">Update</button>
               </>
           ) :
            (
                <>
-                 <input
-                   type="text"
-                   placeholder="Add a task \#filter"
-                   value={input}
-                   name="text"
+                 <div
+                   contentEditable
                    className="input-todo"
-                   onChange={handleChange}
-                   />
+                   onInput={handleChange} 
+                   suppressContentEditableWarning={true}
+                 >
+                  {input}
+                 </div>
                  <button className="btn btn-todo">
                    <BiListPlus className="add-icon" />
                  </button>

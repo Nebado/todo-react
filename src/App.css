@@ -184,8 +184,19 @@ h1 {
 }
 
 .input-todo {
+  caret-color: transparent;
+  line-height: 40px;
+  text-transform: none;
+  font-size: 14px;
+  font-weight: 400;
   width: 100%;
-  padding: 12px 15px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  text-align: left;
+  vertical-align: baseline;
+  padding-left: 12px;
   outline: none;
   border: none;
   background: rgb(0, 0, 0, .6);
@@ -193,8 +204,37 @@ h1 {
   box-shadow: 0 0 3px var(--background-color);
 }
 
+.input-todo::after {
+  content: "";
+  width: 7px;
+  height: 20px;
+  background: rgba(23, 183, 51, 0.5);
+  display: inline-block;
+  animation: cursor-blink 1.5s steps(2) infinite;
+}
+
 .input-todo::placeholder {
   color: var(--main-color);
+}
+
+.input-todo {
+  border: 1px solid transparent;
+}
+
+.input-todo:focus {
+  animation: pulse-border 3.5s cubic-bezier(.215, .61, .355, 1) forwards infinite;
+}
+
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-border {
+  50% {
+    border-color: var(--main-color);
+  }
 }
 
 .todo__row {
