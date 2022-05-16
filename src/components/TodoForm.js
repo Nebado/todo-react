@@ -36,12 +36,21 @@ function TodoForm(props) {
             date: new Date().toLocaleDateString()
         });
 
-        // TODO: fix it, to clear content in the input
-        e.target.firstChild.innerHTML = '';
+        if (e.code === "Enter") {
+          e.target.innerHTML = '';
+        } else {
+          e.target.firstChild.innerHTML = '';
+        }
+    };
+
+    const onKeyDownHandler = e => {
+      if (e.key === "Enter") {
+        handleSubmit(e);
+      }
     };
 
     return (
-        <form className="todo__form" onSubmit={handleSubmit}>
+        <form className="todo__form" onKeyPress={onKeyDownHandler} onSubmit={handleSubmit}>
           {props.edit ? (
               <>
                 <div
