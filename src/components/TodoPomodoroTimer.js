@@ -1,4 +1,5 @@
 import React from 'react';
+import beepAudio from '../sounds/bell.mp3';
 
 class TodoPomodoroTimer extends React.Component {
   constructor(props) {
@@ -19,6 +20,8 @@ class TodoPomodoroTimer extends React.Component {
 
     this.timerStart = this.timerStart.bind(this);
     this.timerStop  = this.timerStop.bind(this);
+
+    this.audio = new Audio(beepAudio);
   }
 
   componentDidMount() {
@@ -33,6 +36,8 @@ class TodoPomodoroTimer extends React.Component {
   }
 
   takeShortBreak() {
+    this.notifySound();
+
     this.setState({
       minutes: 5,
       seconds: 0,
@@ -45,6 +50,8 @@ class TodoPomodoroTimer extends React.Component {
   }
 
   takeLongBreak() {
+    this.notifySound();
+
     this.setState({
       minutes: 15,
       seconds: 0,
@@ -63,6 +70,8 @@ class TodoPomodoroTimer extends React.Component {
   }
 
   timerStop() {
+    this.notifySound();
+
     if (this.state.process === 'break') {
       this.setState({
         minutes: (this.state.typeOfBreak === 'short') ? this.state.breakShortMin : this.state.breakLongMin,
@@ -120,6 +129,10 @@ class TodoPomodoroTimer extends React.Component {
         seconds: currentSec
       });
     }
+  }
+
+  notifySound() {
+    this.audio.play();
   }
 
   render() {
